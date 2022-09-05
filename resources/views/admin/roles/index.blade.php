@@ -25,9 +25,13 @@
                         </td>
                         <td>
                             <div class="flex justify-end">
-                                <div class="spaxe-x-2">
+                                <div class="flex space-x-2">
                                     <a href="{{ route('admin.roles.edit', $role->id) }}" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md">Editar</a>
-                                    <a href="" class="px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded-md">Deletar</a>
+                                    <form class="px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded-md" method="POST" action="{{ route('admin.roles.destroy', $role->id) }}"  onsubmit="return confirm('Tem certeza que deseja deletar?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit">Deletar</button>
+                                    </form>
                                 </div>
                             </div>
                         </td>
