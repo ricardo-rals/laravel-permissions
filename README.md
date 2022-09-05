@@ -1,64 +1,40 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Aplicação de controle de permissões de usuário em Laravel
+- Foi utilizado o Laravel Breeze e o pacote Spatie.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Primeiros passos:
+1. Clone o repositório:
+- `git clone https://github.com/ricardo-rals/laravel-permissions.git`
+2. Acesse o projeto
+- `cd laravel-permissions`
+3. Instale as dependências e o framework
+- `compoer install`
+4. Copie o arquivo .env.example
+- `cp .env.exampe .env`
+5. Crie uma nova chave da aplicação
+- `php artisan key:generate`
+6. Configure o arquivo .env e rode as migrations
+- `php artisan migrate --seed`
+7. Finalize instalando o NPM
+- `npm install`
 
-## About Laravel
+## Como acessar a aplicação:
+1. Faça o login com o usuário administrador
+ ```
+ Usuário: admin@admin.com
+ Senha: 123456
+ ```
+2. Acesse a pagina de Admin localizada no topo conforme a imagem abaixo:
+    ![image](https://user-images.githubusercontent.com/64266184/188500238-b5fa6d49-04ae-430d-891b-05f3d41df288.png)
+3. Acesse a pagina de Usuários para criar um novo
+    ![image](https://user-images.githubusercontent.com/64266184/188500434-616d8191-71c6-4cec-b93d-47e674b73b12.png)
+4. Após isso, vá em Editar para dar permissões ou funções ao usuário 
+    ![image](https://user-images.githubusercontent.com/64266184/188500617-fbac4764-810a-4c07-81cb-c0128f857125.png)
+5. Após isso, deslogue e entre com o novo usuário para verificar que as permissões foram atribuidas com sucesso
+    ![image](https://user-images.githubusercontent.com/64266184/188500715-d791edc0-77cb-4001-9270-c94e43f7eaf2.png)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Bonus:
+- Você também consegue criar novas funções e permissões. Lembrando de alterar no código sempre que criar uma permissão ou função nova
+![image](https://user-images.githubusercontent.com/64266184/188500784-f619a886-79ab-46e2-a035-1e974b264165.png)
+![image](https://user-images.githubusercontent.com/64266184/188500799-e03c93aa-11c8-4316-9164-8363aec36c12.png)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+ 
