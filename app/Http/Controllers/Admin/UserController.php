@@ -60,48 +60,48 @@ class UserController extends Controller
     public function assignRole(Request $request, User $user)
     {
         if ($user->hasRole($request->role)) {
-            return back()->with('message', 'Role exists.');
+            return back();
         }
 
         $user->assignRole($request->role);
-        return back()->with('message', 'Role assigned.');
+        return back();
     }
 
     public function removeRole(User $user, Role $role)
     {
         if ($user->hasRole($role)) {
             $user->removeRole($role);
-            return back()->with('message', 'Role removed.');
+            return back();
         }
 
-        return back()->with('message', 'Role not exists.');
+        return back();
     }
 
     public function givePermission(Request $request, User $user)
     {
         if ($user->hasPermissionTo($request->permission)) {
-            return back()->with('message', 'Permission exists.');
+            return back();
         }
         $user->givePermissionTo($request->permission);
-        return back()->with('message', 'Permission added.');
+        return back();
     }
 
     public function revokePermission(User $user, Permission $permission)
     {
         if ($user->hasPermissionTo($permission)) {
             $user->revokePermissionTo($permission);
-            return back()->with('message', 'Permission revoked.');
+            return back();
         }
-        return back()->with('message', 'Permission does not exists.');
+        return back();
     }
 
     public function destroy(User $user)
     {
         if ($user->hasRole('admin')) {
-            return back()->with('message', 'you are admin.');
+            return back();
         }
         $user->delete();
 
-        return back()->with('message', 'User deleted.');
+        return back();
     }
 }
