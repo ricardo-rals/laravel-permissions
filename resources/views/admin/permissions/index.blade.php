@@ -24,8 +24,13 @@
                         </div>
                         </td>
                         <td>
-                            <a href="">Editar</a>
-                            <a href="">Deletar</a>
+                            <div class="flex justify-end">
+                                <div class="spaxe-x-2">
+                                    <a href="{{ route('admin.permissions.edit', $permission->id) }}" class="px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md">Editar</a>
+                                    <a href="" class="px-4 py-2 bg-red-500 hover:bg-red-700 text-white rounded-md">Deletar</a>
+                                </div>
+                            </div>
+                            
                         </td>
                     </tr>  
                         @endforeach
